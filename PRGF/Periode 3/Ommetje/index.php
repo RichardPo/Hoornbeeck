@@ -4,7 +4,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="src/css/style.css" rel="stylesheet" type="text/css"/>
+        <link href="src/css/style.css?<?= time() ?>" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
@@ -12,9 +12,9 @@
             <div class="naam">RichardPost</div>
             <div class="xp"><span class="pink"><b>0</b></span> XP</div>
             <div class="hoofd center">
-                <img src="src/pictures/hoofd.png" width="40%"/>
+                <img src="src/pictures/hoofd2.png" width="288px"/>
             </div>
-        </header>
+            <div class="curve-top"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.80,31.88 C132.28,11.15 455.08,55.55 547.62,189.76 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: white;"></path></svg></div>        </header>
 
         <div class="main">
             <div class="minutes">
@@ -120,14 +120,17 @@
         </div>
 
         <footer>
-            Account instellingen<br>
-            Over Ommetje<br>
-            Veelgestelde vragen<br>
-            Uitloggen<br><br>
-            <span class="very-little">
-                Privacy statement<br>
-                Terms & Conditions
-            </span>
+        <div class="curve-bottom"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.80,31.88 C132.28,11.15 164.44,87.14 546.50,134.50 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(228, 101, 175);"></path></svg></div>
+            <div class="footer-text">
+                Account instellingen<br>
+                Over Ommetje<br>
+                Veelgestelde vragen<br>
+                Uitloggen<br><br>
+                <span class="very-little">
+                    Privacy statement<br>
+                    Terms & Conditions
+                </span>
+            </div>
         </footer>
     </body>
 
