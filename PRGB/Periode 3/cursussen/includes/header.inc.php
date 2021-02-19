@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <link href="src/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="src/css/style.css?time=<?=time()?>" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>

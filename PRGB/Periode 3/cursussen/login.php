@@ -2,6 +2,8 @@
 
     include "includes/header.inc.php";
 
+    $message = "";
+
     if($_POST) {
         $users = [
             [
@@ -26,7 +28,7 @@
         $lPassword = $_POST["password"];
 
         if(empty($lUsername) || empty($lPassword)) {
-            echo "<span class='red'>Vul beide velden in.</span><br><br>";
+            $message = "Vul beide velden in.";
         } else {
             foreach($users as $user) {
                 if($user["username"] == $lUsername && $user["password"] == $lPassword) {
@@ -36,7 +38,7 @@
                 }
             }
                 
-            echo "<span class='red'>Gebruikers naam en/of wachtwoord onjuist.</span><br><br>";
+            $message = "Gebruikers naam en/of wachtwoord onjuist.";
         }
     }
 
@@ -49,6 +51,7 @@
         <input type="text" name="username"/><br><br>
         <label>Wachtwoord: </label><br>
         <input type="password" name="password"/><br><br><br>
+        <?= empty($message) ? "" : "<span class='red'>" . $message . "</span><br><br>" ?>
         <input type="submit" value="Inloggen"/>
     </form>
 </div>

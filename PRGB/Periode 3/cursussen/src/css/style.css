@@ -72,17 +72,13 @@ td {
 
 form {
     padding: 30px 60px 30px 60px;
-    background: #303030;
+    background: #f1f1f1;
     border-radius: 10px;
-}
-
-form h2, form label {
-    color: white;
 }
 
 input {
     width: 600px;
-    border: 1px solid #303030;
+    border: 1px solid #8b8b8b;
     border-radius: 6px;
     background: white;
     padding: 10px;
@@ -92,6 +88,8 @@ input[type="submit"] {
     width: 100px;
     background-color: rgb(96, 177, 127);
     cursor: pointer;
+    border: none;
+    border-bottom: 3px solid  rgb(82, 146, 107);
 }
 
 input:focus {
