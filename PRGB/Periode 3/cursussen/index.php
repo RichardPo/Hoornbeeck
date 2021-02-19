@@ -1,5 +1,7 @@
 <?php
 
+    include "includes/header.inc.php";
+
     $cursussen = [
         [
             "cursus" => "Dreamweaver",
@@ -29,63 +31,42 @@
     ];
 
 ?>
+<div class="main center">
+    <h2>Inschrijven</h2>
+    <table>
+        <tr>
+            <td>Cursus</td>
+            <td>Omschrijving</td>
+            <td>Prijs</td>
 
-<html>
+            <?= isset($_SESSION["username"]) ? "<td></td>" : "" ?>
+        </tr>
 
-    <head>
-        <style>
-            table, tr, td {
-                border: 2px solid black;
-                border-collapse: collapse;
-            }
-            td {
-                padding: 5px;
-            }
-        </style>
-    </head>
+        <?php
+        
+            foreach($cursussen as $cursus) {
+                $naam = $cursus["cursus"];
+                $omschrijving = $cursus["omschrijving"];
+                $prijs = $cursus["prijs"];
 
-    <body>
-        <h1>Cursussen</h1>
+                echo "
+                    <tr>
+                        <td>" . $naam . "</td>
+                        <td>" . $omschrijving . "</td>
+                        <td>" . $prijs . "</td>
+                ";
 
-        <div id="navbar">
-            <a href="index.php">Home</a>
-            <?= isset($_GET["loggedIn"]) ? "<a href='login.php'>Uitloggen</a>" : "<a href='login.php'>Inloggen</a>" ?>
-        </div><br>
-
-        <table>
-            <tr>
-                <td>Cursus</td>
-                <td>Omschrijving</td>
-                <td>Prijs</td>
-
-                <?= isset($_GET["loggedIn"]) ? "<td></td>" : "" ?>
-            </tr>
-
-            <?php
-            
-                foreach($cursussen as $cursus) {
-                    $naam = $cursus["cursus"];
-                    $omschrijving = $cursus["omschrijving"];
-                    $prijs = $cursus["prijs"];
-
-                    echo "
-                        <tr>
-                            <td>" . $naam . "</td>
-                            <td>" . $omschrijving . "</td>
-                            <td>" . $prijs . "</td>
-                    ";
-
-                    if(isset($_GET["loggedIn"])) {
-                        echo "<td><a href='index.php?loggedIn&cursus=" . $naam . "'>Inschrijven</a></td>";
-                    }
-
-                    echo "</tr>";
+                if(isset($_SESSION["username"])) {
+                    echo "<td><a href='index.php?cursus=" . $naam . "'>Inschrijven</a></td>";
                 }
-            
-            ?>
-        </table>
 
-        <?= isset($_GET["loggedIn"]) && isset($_GET["cursus"]) ? "Je hebt je succesvol ingeschreven voor de cursus " . $_GET["cursus"] . "!" : "" ?>
-    </body>
+                echo "</tr>";
+            }
+        
+        ?>
+    </table>
 
-</html>
+    <?= isset($_SESSION["username"]) && isset($_GET["cursus"]) ? "<p class='success'>Beste " . $_SESSION["username"] . ", je hebt je succesvol ingeschreven voor de cursus " . $_GET["cursus"] . "!</p>" : "" ?>
+</div>
+
+<?php include "includes/footer.inc.php"; ?>
