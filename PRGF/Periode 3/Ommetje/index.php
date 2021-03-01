@@ -61,29 +61,59 @@
                     </div>
 
                     <div class="block-main">
-                        <div class="medaille">
-                            <div class="icon"></div>
+                        <div class="medaille" id="Hiker">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
                             <div class="medaille-text"><b>Hiker</b><br>Loop 20 minuten per dag</div>
                         </div>
-                        <div class="medaille">
-                            <div class="icon"></div>
+                        <div class="medaille" id="Reeks">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://cdn1.iconfinder.com/data/icons/unigrid-phantom-culture/60/009_021_foot_walk_allowed_shoe-512.png);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
                             <div class="medaille-text"><b>Reeks</b><br>Aaneengesloten dagen lopen</div>
                         </div>
-                        <div class="medaille">
-                            <div class="icon"></div>
+                        <div class="medaille" id="Hart">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://purepng.com/public/uploads/large/heart-icon-y1k.png);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
                             <div class="medaille-text"><b>Hart</b><br>Deel de campagne</div>
                         </div>
-                        <div class="medaille">
-                            <div class="icon"></div>
+                        <div class="medaille" id="VroegeVogel">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://www.pngkey.com/png/full/251-2518897_clip-art-flying-bird-transparent-background-dove-clipart.png);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
                             <div class="medaille-text"><b>Vroege vogel</b><br>Loop voor 9:00 uur</div>
                         </div>
-                        <div class="medaille">
-                            <div class="icon"></div>
+                        <div class="medaille" id="BlijfActief">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fa/Run_icon.png);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
                             <div class="medaille-text"><b>Blijf actief</b><br>Blijf voldoende in beweging</div>
                         </div>
-                        <div class="medaille">
-                            <div class="icon"></div>
-                            <div class="medaille-text"><b>Weetjes</b><br>Spaar alle Hersenweetjes</div>
+                        <div class="medaille" id="Weetjes">
+                            <div class="medal">
+                                <div class="icon" style="background-image: url(https://iconfair.com/wp-content/uploads/2020/08/1-55.png);"></div>
+                                <svg class="progress-ring" width="100%" height="100%">
+                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                </svg>
+                            </div>
+                            <div class="medaille-text"><b>Weetjes</b><br>Spaar alle hersenweetjes</div>
                         </div>
                     </div>
 
@@ -132,6 +162,67 @@
                 </span>
             </div>
         </footer>
+
+        <div class="popupBackground hidden"></div>
+
+        <div class="medalPopup hidden">
+            <div class="popupContent">
+                <div class="popupTitle">De Hiker medaille</div>
+                <div class="popupText">Loop dagelijks minimaal 20 minuten. Je krijgt hier per dag 5 XP punten voor. Voor je tweede Ommetje van de dag krijg je 1 extra punt.</div>
+                <div class="levels">
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">brons</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">zilver</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">goud</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">robijn</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">saffier</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">diamant</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">smaragd</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">amethist</div>
+                    </div>
+                    <div class="level center">
+                        <div id="level-amount">4x</div>
+                        <div id="level-icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                        <div id="level-name">parelmoer</div>
+                    </div>
+                </div>
+            </div>
+            <div class="popupFooter center">
+                <div onclick="ClosePopup()">Sluiten</div>
+            </div>
+        </div>
+
+        <script src="src/js/progress.js?time=<?=time()?>"></script>
     </body>
 
 </html>
