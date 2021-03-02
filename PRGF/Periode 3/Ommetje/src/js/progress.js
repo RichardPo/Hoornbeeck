@@ -33,7 +33,7 @@ var medalInfo = {
         title: "De Weetjes medaille",
         desc: "Na ieder gelopen Ommetje ontvang je een willekeurig Hersenweetje van Erik Schrerder. Net zoals met flippo's, krijg je soms een dubbele. Verzamel ze allemaal om de medaille te behalen. Druk op de knop 'Bekijk jouw weetjes' om te zien welke je al hebt verzameld.<br><div class='popupButton center'><button>Bekijk jouw Weetjes</button></div>",
         levels: [3, 10, 25, 40, 70, 100, 225, 325, 425],
-        icon: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Run_icon.png"
+        icon: "https://iconfair.com/wp-content/uploads/2020/08/1-55.png"
     }
 }
 
