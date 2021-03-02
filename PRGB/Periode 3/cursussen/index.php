@@ -2,33 +2,15 @@
 
     include "includes/header.inc.php";
 
-    $cursussen = [
-        [
-            "cursus" => "Dreamweaver",
-            "omschrijving" => "Basis webdesign",
-            "prijs" => "120"
-        ],
-        [
-            "cursus" => "Javascript",
-            "omschrijving" => "Programmeren in de browser",
-            "prijs" => "90"
-        ],
-        [
-            "cursus" => "PHP",
-            "omschrijving" => "Programmeren op de server",
-            "prijs" => "150"
-        ],
-        [
-            "cursus" => "Dreamweaver Eindwerk",
-            "omschrijving" => "Webdesign in de praktijk",
-            "prijs" => "180"
-        ],
-        [
-            "cursus" => "Dreamweaver",
-            "omschrijving" => "Webdesign thuis",
-            "prijs" => "280"
-        ],
-    ];
+    $cursussen = [];
+
+    $conn = mysqli_connect("localhost", "root", "", "cursussen");
+    $sql = "SELECT * FROM courses";
+    $result = mysqli_query($conn, $sql);
+    while($row = mysqli_fetch_assoc($result)) {
+        $cursus = ["cursus" => $row["name"], "omschrijving" => $row["description"], "prijs" => $row["price"]];
+        array_push($cursussen, $cursus);
+    }
 
 ?>
 <div class="main center">
@@ -39,7 +21,7 @@
             <td>Omschrijving</td>
             <td>Prijs</td>
 
-            <?= isset($_SESSION["username"]) ? "<td></td>" : "" ?>
+            <?= isset($_SESSION["user"]) ? "<td></td>" : "" ?>
         </tr>
 
         <?php
@@ -56,7 +38,7 @@
                         <td>" . $prijs . "</td>
                 ";
 
-                if(isset($_SESSION["username"])) {
+                if(isset($_SESSION["user"])) {
                     echo "<td><a href='index.php?cursus=" . $naam . "'>Inschrijven</a></td>";
                 }
 
@@ -66,7 +48,7 @@
         ?>
     </table>
 
-    <?= isset($_SESSION["username"]) && isset($_GET["cursus"]) ? "<p class='success'>Beste " . $_SESSION["username"] . ", je hebt je succesvol ingeschreven voor de cursus " . $_GET["cursus"] . "!</p>" : "" ?>
+    <?= isset($_SESSION["user"]) && isset($_GET["cursus"]) ? "<p class='success'>Beste " . $_SESSION["user"]["fullname"] . ", je hebt je succesvol ingeschreven voor de cursus " . $_GET["cursus"] . "!</p>" : "" ?>
 </div>
 
 <?php include "includes/footer.inc.php"; ?>

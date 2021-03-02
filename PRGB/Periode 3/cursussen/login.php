@@ -5,40 +5,25 @@
     $message = "";
 
     if($_POST) {
-        $users = [
-            [
-                "username" => "Klaas",
-                "password" => "Klaas2"
-            ],
-            [
-                "username" => "Albert Jan",
-                "password" => "Appie"
-            ],
-            [
-                "username" => "Pim",
-                "password" => "Pim2"
-            ],
-            [
-                "username" => "Pepijn",
-                "password" => "Peppie"
-            ]
-        ];
-
         $lUsername = $_POST["username"];
         $lPassword = $_POST["password"];
 
         if(empty($lUsername) || empty($lPassword)) {
             $message = "Vul beide velden in.";
         } else {
-            foreach($users as $user) {
-                if($user["username"] == $lUsername && $user["password"] == $lPassword) {
-                    $_SESSION["username"] = $lUsername;
+            $conn = mysqli_connect("localhost", "root", "", "cursussen");
+            $sql = "SELECT * FROM users WHERE username='$lUsername' AND password='$lPassword'";
+            $result = mysqli_query($conn, $sql);
+
+            if(mysqli_num_rows($result) == 1) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    $_SESSION["user"] = ["user_id" => $row["id"], "username" => $row["username"], "fullname" => $row["fullname"]];
                     header("Location: index.php");
                     return;
                 }
+            } else {
+                $message = "Gebruikers naam en/of wachtwoord onjuist.";
             }
-                
-            $message = "Gebruikers naam en/of wachtwoord onjuist.";
         }
     }
 
