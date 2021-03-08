@@ -15,6 +15,7 @@
                 <img src="src/pictures/hoofd2.png" width="288px"/>
             </div>
             <div class="curve-top"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.80,31.88 C132.28,11.15 455.08,55.55 547.62,189.76 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: white;"></path></svg></div>        </header>
+        </header>
 
         <div class="main">
             <div class="minutes">
@@ -22,7 +23,7 @@
             </div>
 
             <div class="center main-child">
-                <button class="start">Start Ommetje</button>
+                <button class="start" onclick="StartOmmetje();">Start Ommetje</button>
 
                 <div id="team" class="block">
                     <div class="block-header">
@@ -150,7 +151,7 @@
         </div>
 
         <footer>
-        <div class="curve-bottom"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.80,31.88 C132.28,11.15 164.44,87.14 546.50,134.50 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(228, 101, 175);"></path></svg></div>
+            <div class="curve-bottom"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M-8.80,31.88 C132.28,11.15 164.44,87.14 546.50,134.50 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: rgb(228, 101, 175);"></path></svg></div>
             <div class="footer-text">
                 Account instellingen<br>
                 Over Ommetje<br>

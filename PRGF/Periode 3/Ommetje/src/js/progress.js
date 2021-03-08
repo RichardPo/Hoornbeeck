@@ -86,3 +86,7 @@ function ClosePopup() {
     popupBackground.classList.add("hidden");
     popup.classList.add("hidden");
 }
+
+function StartOmmetje() {
+    location.href = "ommetje.php";
+}
