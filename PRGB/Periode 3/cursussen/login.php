@@ -2,11 +2,16 @@
 
     include "includes/header.inc.php";
 
+    if(isset($_SESSION["user"])) {
+        header("Location: index.php");
+        exit();
+    }
+
     $message = "";
 
     if($_POST) {
-        $lUsername = $_POST["username"];
-        $lPassword = $_POST["password"];
+        $lUsername = $_POST["lUsername"];
+        $lPassword = $_POST["lPassword"];
 
         if(empty($lUsername) || empty($lPassword)) {
             $message = "Vul beide velden in.";
@@ -17,9 +22,14 @@
 
             if(mysqli_num_rows($result) == 1) {
                 while($row = mysqli_fetch_assoc($result)) {
-                    $_SESSION["user"] = ["user_id" => $row["id"], "username" => $row["username"], "fullname" => $row["fullname"]];
+                    $admin = false;
+                    if($row["admin"] > 0) {
+                        $admin = true;
+                    }
+
+                    $_SESSION["user"] = ["user_id" => $row["id"], "username" => $row["username"], "fullname" => $row["fullname"], "admin" => $admin];
                     header("Location: index.php");
-                    return;
+                    exit();
                 }
             } else {
                 $message = "Gebruikers naam en/of wachtwoord onjuist.";
@@ -33,9 +43,9 @@
     <form action="" method="post" class="login-form">
         <h2>Inloggen</h2>
         <label>Gebruikersnaam: </label><br>
-        <input type="text" name="username"/><br><br>
+        <input type="text" name="lUsername"/><br><br>
         <label>Wachtwoord: </label><br>
-        <input type="password" name="password"/><br><br><br>
+        <input type="password" name="lPassword"/><br><br><br>
         <?= empty($message) ? "" : "<span class='red'>" . $message . "</span><br><br>" ?>
         <input type="submit" value="Inloggen"/>
     </form>
