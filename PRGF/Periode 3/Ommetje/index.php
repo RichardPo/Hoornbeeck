@@ -64,54 +64,54 @@
                     <div class="block-main">
                         <div class="medaille" id="Hiker">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://www.svgrepo.com/show/251868/hiker-walk.svg);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/Hiker.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Hiker</b><br>Loop 20 minuten per dag</div>
                         </div>
                         <div class="medaille" id="Reeks">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://cdn1.iconfinder.com/data/icons/unigrid-phantom-culture/60/009_021_foot_walk_allowed_shoe-512.png);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/Reeks.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Reeks</b><br>Aaneengesloten dagen lopen</div>
                         </div>
                         <div class="medaille" id="Hart">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://purepng.com/public/uploads/large/heart-icon-y1k.png);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/Hart.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Hart</b><br>Deel de campagne</div>
                         </div>
                         <div class="medaille" id="VroegeVogel">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://www.pngkey.com/png/full/251-2518897_clip-art-flying-bird-transparent-background-dove-clipart.png);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/VroegeVogel.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Vroege vogel</b><br>Loop voor 9:00 uur</div>
                         </div>
                         <div class="medaille" id="BlijfActief">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/fa/Run_icon.png);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/BlijfActief.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Blijf actief</b><br>Blijf voldoende in beweging</div>
                         </div>
                         <div class="medaille" id="Weetjes">
                             <div class="medal">
-                                <div class="icon" style="background-image: url(https://iconfair.com/wp-content/uploads/2020/08/1-55.png);"></div>
+                                <div class="icon" style="background-image: url(src/pictures/Weetjes.png);"></div>
                                 <svg class="progress-ring" width="100%" height="100%">
-                                    <circle class="progress-ring__circle" stroke="#3c9966" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
+                                    <circle class="progress-ring__circle" stroke="#86c54a" stroke-width="6" fill="transparent" r="calc(50% - 3px)" cx="50%" cy="50%"/>
                                 </svg>
                             </div>
                             <div class="medaille-text"><b>Weetjes</b><br>Spaar alle hersenweetjes</div>

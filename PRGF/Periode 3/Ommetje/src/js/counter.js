@@ -13,4 +13,5 @@ var interv = setInterval(Count, 1000);
 
 function StopOmmetje() {
     clearInterval(interv);
+    location.href = "index.php";
 }

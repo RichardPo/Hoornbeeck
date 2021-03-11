@@ -35,6 +35,6 @@
             </div>
         </div>
 
-        <script src="src/js/counter.js"></script>
+        <script src="src/js/counter.js?time=<?= time(); ?>"></script>
     </body>
 </html>
