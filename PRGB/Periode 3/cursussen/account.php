@@ -17,7 +17,7 @@
             $uFullname = $_POST["uFullname"];
             $uPassword = $_POST["uPassword"];
     
-            if(empty($uUsername) || empty($uPassword)) {
+            if(empty($uUsername) || empty($uFullname) || empty($uPassword)) {
                 $uMessage = "Vul alle velden in.";
             } else {
                 $userID = $_SESSION["user"]["user_id"];
