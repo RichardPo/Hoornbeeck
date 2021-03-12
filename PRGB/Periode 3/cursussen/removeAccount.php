@@ -7,7 +7,7 @@
         exit();
     } else {
         $userID = $_SESSION["user"]["user_id"];
-        $conn = mysqli_connect("localhost", "root", "", "cursussen");
+        include "includes/conn.inc.php";
         $sql = "DELETE FROM users WHERE id='$userID'";
         mysqli_query($conn, $sql);
         header("Location: logout.php");

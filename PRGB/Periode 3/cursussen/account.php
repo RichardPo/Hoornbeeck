@@ -41,29 +41,33 @@
                 }
             }
         } elseif(isset($_POST["updateAdmins"])) {
-            $aUsername = $_POST["aUsername"];
-            $aAction = $_POST["aAction"];
+            if($_SESSION["user"]["admin"] == 1) {
+                $aUsername = $_POST["aUsername"];
+                $aAction = $_POST["aAction"];
 
-            if(empty($aUsername) || empty($aAction)) {
-                $aMessage = "Vul alle velden in.";
-            } else {
-                $admin = 0;
-                if($aAction == "add") {
-                    $admin = 1;
-                }
-                $sql1 = "SELECT * FROM users WHERE username='$aUsername'";
-                $result = mysqli_query($conn, $sql1);
-                if(mysqli_num_rows($result) > 0) {
-                    $sql2 = "UPDATE users SET admin='$admin' WHERE username='$aUsername'";
-                    if(!mysqli_query($conn, $sql2)) {
-                        $aMessage = "Er ging iets fout bij het bijwerken van de beheerder-selectie. Probeer het nog een keer.";
-                    } else {
-                        header("Location: account.php");
-                        exit();
-                    }
+                if(empty($aUsername) || empty($aAction)) {
+                    $aMessage = "Vul alle velden in.";
                 } else {
-                    $aMessage = "Geen gebruiker gevonden!";
+                    $admin = 0;
+                    if($aAction == "add") {
+                        $admin = 1;
+                    }
+                    $sql1 = "SELECT * FROM users WHERE username='$aUsername'";
+                    $result = mysqli_query($conn, $sql1);
+                    if(mysqli_num_rows($result) > 0) {
+                        $sql2 = "UPDATE users SET admin='$admin' WHERE username='$aUsername'";
+                        if(!mysqli_query($conn, $sql2)) {
+                            $aMessage = "Er ging iets fout bij het bijwerken van de beheerder-selectie. Probeer het nog een keer.";
+                        } else {
+                            header("Location: account.php");
+                            exit();
+                        }
+                    } else {
+                        $aMessage = "Geen gebruiker gevonden!";
+                    }
                 }
+            } else {
+                $aMessage = "Je moet een admin zijn om admins te kunnen beheren!";
             }
         }
     }

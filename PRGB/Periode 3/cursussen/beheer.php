@@ -9,7 +9,6 @@
 
     $cMessage = "";
     if($_POST) {
-        include "includes/conn.inc.php";
         $sql = "";
 
         if(isset($_POST["addCourse"])) {
@@ -44,6 +43,7 @@
         }
 
         if(!empty($sql)) {
+            include "includes/conn.inc.php";
             if(mysqli_query($conn, $sql))  {
                 header("Location: index.php");
                 exit();
