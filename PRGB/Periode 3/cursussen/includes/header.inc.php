@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/e5272abace.js" crossorigin="anonymous"></script>
 
     <link href="src/css/style.css?time=<?=time()?>" rel="stylesheet" type="text/css"/>
+
+    <script src="src/js/popup.js"></script>
 </head>
 
 <body>

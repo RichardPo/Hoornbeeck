@@ -17,7 +17,7 @@
         if(empty($rUsername) || empty($rPassword) || empty($rFullname)) {
             $message = "Vul alle velden in.";
         } else {
-            $conn = mysqli_connect("localhost", "root", "", "cursussen");
+            include "includes/conn.inc.php";
             $sql1 = "SELECT * FROM users WHERE username='$rUsername'";
             $result = mysqli_query($conn, $sql1);
             if(mysqli_num_rows($result) > 0) {

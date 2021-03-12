@@ -11,6 +11,7 @@
     $aMessage = "";
 
     if($_POST) {
+        include "includes/conn.inc.php";
         if(isset($_POST["updateAccount"])) {
             $uUsername = $_POST["uUsername"];
             $uFullname = $_POST["uFullname"];
@@ -21,7 +22,6 @@
             } else {
                 $userID = $_SESSION["user"]["user_id"];
     
-                $conn = mysqli_connect("localhost", "root", "", "cursussen");
                 $sql1 = "SELECT * FROM users WHERE username='$uUsername'";
                 $result = mysqli_query($conn, $sql1);
                 if(mysqli_num_rows($result) > 0) {
@@ -32,6 +32,9 @@
                         $_SESSION["user"]["username"] = $uUsername;
                         $_SESSION["user"]["password"] = $uPassword;
                         $_SESSION["user"]["fullname"] = $uFullname;
+
+                        header("Location: account.php");
+                        exit();
                     } else {
                         $uMessage = "Er ging iets fout bij het bijwerken van uw account. Probeer het nog een keer.";
                     }
@@ -48,13 +51,15 @@
                 if($aAction == "add") {
                     $admin = 1;
                 }
-                $conn = mysqli_connect("localhost", "root", "", "cursussen");
                 $sql1 = "SELECT * FROM users WHERE username='$aUsername'";
                 $result = mysqli_query($conn, $sql1);
                 if(mysqli_num_rows($result) > 0) {
                     $sql2 = "UPDATE users SET admin='$admin' WHERE username='$aUsername'";
                     if(!mysqli_query($conn, $sql2)) {
                         $aMessage = "Er ging iets fout bij het bijwerken van de beheerder-selectie. Probeer het nog een keer.";
+                    } else {
+                        header("Location: account.php");
+                        exit();
                     }
                 } else {
                     $aMessage = "Geen gebruiker gevonden!";
@@ -69,9 +74,9 @@
     <div class="block">
         Gebruikersnaam: <?= $_SESSION["user"]["username"]; ?><br>
         Volledige naam: <?= $_SESSION["user"]["fullname"]; ?><br><br>
-        <?= $_SESSION["user"]["admin"] ? "<div class='account-btn center' style='background-color: rgb(96, 177, 127);' onclick=\"OpenPopup('adminPopup')\">Beheer admins</div><br>" : "" ?>
-        <div class="account-btn center" style="background-color: rgb(96, 177, 127);" onclick="OpenPopup('accountPopup')">Account bijwerken</div><br>
-        <a href="removeAccount.php"><div class="account-btn center">Verwijder account</div></a>
+        <?= $_SESSION["user"]["admin"] ? "<div class='btn center' style='background-color: rgb(96, 177, 127);' onclick=\"OpenPopup('adminPopup')\">Beheer admins</div><br>" : "" ?>
+        <div class="btn center" style="background-color: rgb(96, 177, 127);" onclick="OpenPopup('accountPopup')">Account bijwerken</div><br>
+        <a href="removeAccount.php"><div class="btn center">Verwijder account</div></a>
     </div>
 
     <div class="popup hidden" id="accountPopup">
@@ -104,9 +109,7 @@
     </div>
 </div>
 
-<script src="src/js/popup.js"></script>
-
-<?= isset($_GET["accountPopup"]) ? "<script>document.querySelector('#accountPopup').classList.remove('hidden');</script>" : "" ?>
-<?= isset($_GET["adminPopup"]) ? "<script>document.querySelector('#adminPopup').classList.remove('hidden');</script>" : "" ?>
+<?= isset($_GET["accountPopup"]) ? "<script>OpenPopup('accountPopup');</script>" : "" ?>
+<?= isset($_GET["adminPopup"]) ? "<script>OpenPopup('adminPopup');</script>" : "" ?>
 
 <?php include "includes/footer.inc.php"; ?>

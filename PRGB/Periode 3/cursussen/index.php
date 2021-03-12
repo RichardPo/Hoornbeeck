@@ -4,7 +4,7 @@
 
     $cursussen = [];
 
-    $conn = mysqli_connect("localhost", "root", "", "cursussen");
+    include "includes/conn.inc.php";
     $sql = "SELECT * FROM courses";
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_assoc($result)) {
@@ -49,6 +49,8 @@
     </table>
 
     <?= isset($_SESSION["user"]) && isset($_GET["cursus"]) ? "<p class='success'>Beste " . $_SESSION["user"]["fullname"] . ", je hebt je succesvol ingeschreven voor de cursus " . $_GET["cursus"] . "!</p>" : "" ?>
+
+    <?= isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1 ? "<br><a href='beheer.php'>Beheer cursussen</a>" : "" ?>
 </div>
 
 <?php include "includes/footer.inc.php"; ?>

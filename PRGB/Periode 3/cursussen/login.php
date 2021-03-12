@@ -16,7 +16,7 @@
         if(empty($lUsername) || empty($lPassword)) {
             $message = "Vul beide velden in.";
         } else {
-            $conn = mysqli_connect("localhost", "root", "", "cursussen");
+            include "includes/conn.inc.php";
             $sql = "SELECT * FROM users WHERE username='$lUsername' AND password='$lPassword'";
             $result = mysqli_query($conn, $sql);
 
