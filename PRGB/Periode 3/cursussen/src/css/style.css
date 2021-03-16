@@ -76,7 +76,7 @@ form {
     border-radius: 10px;
 }
 
-input[type="text"], input[type="password"], input[type="email"], input[type="submit"], input[type="number"], select {
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"], input[type="number"], input[type="date"], select {
     width: 600px;
     border: 1px solid #8b8b8b;
     border-radius: 6px;
@@ -139,6 +139,11 @@ input:focus, select:focus {
 .close-popup {
     float: right;
     padding: 10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.link {
     text-decoration: underline;
     cursor: pointer;
 }
