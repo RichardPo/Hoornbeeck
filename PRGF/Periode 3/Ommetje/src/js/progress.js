@@ -90,3 +90,7 @@ function ClosePopup() {
 function StartOmmetje() {
     location.href = "ommetje.php";
 }
+
+function OpenList() {
+    location.href = "ranglijst.php";
+}

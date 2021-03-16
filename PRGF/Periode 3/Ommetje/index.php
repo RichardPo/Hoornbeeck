@@ -51,7 +51,7 @@
                     </div>
 
                     <div class="center block-buttons">
-                        <button class="leaderboard">Bekijk ranglijst</button>
+                        <button class="leaderboard-btn" onclick="OpenList()">Bekijk ranglijst</button>
                         <button class="team">Team beheer</button>
                     </div>
                 </div>
