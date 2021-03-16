@@ -9,7 +9,14 @@
     $sql = "SELECT * FROM courses";
     $result = mysqli_query($conn, $sql);
     while($row = mysqli_fetch_assoc($result)) {
-        $cursus = ["id" => $row["id"], "cursus" => $row["name"], "omschrijving" => $row["description"], "prijs" => $row["price"]];
+        $catID = $row["category"];
+        $sql2 = "SELECT * FROM categories WHERE id='$catID'";
+        $result2 = mysqli_query($conn, $sql2);
+        $cat = "";
+        while($row2 = mysqli_fetch_assoc($result2)) {
+            $cat = $row2["categoryName"];
+        }
+        $cursus = ["id" => $row["id"], "cursus" => $row["name"], "omschrijving" => $row["description"], "prijs" => $row["price"], "category" => $cat];
         array_push($cursussen, $cursus);
     }
 
@@ -22,8 +29,8 @@
             if(empty($date)) {
                 $message = "Geef een datum op voor de inschrijving.";
             } else {
-                $sql2 = "INSERT INTO registrations (userID, courseID, date) VALUES ('$userID', '$courseID', '$date')";
-                if(mysqli_query($conn, $sql2)) {
+                $sql3 = "INSERT INTO registrations (userID, courseID, date) VALUES ('$userID', '$courseID', '$date')";
+                if(mysqli_query($conn, $sql3)) {
                     $message = "Beste " . $_SESSION["user"]["username"] . ", je hebt je succesvol ingeschreven.";
                 } else {
                     $message = "Er ging iets mis bij het inschrijven. Probeer het nog een keer.";
@@ -42,6 +49,7 @@
             <td>Cursus</td>
             <td>Omschrijving</td>
             <td>Prijs</td>
+            <td>Categorie</td>
 
             <?= isset($_SESSION["user"]) ? "<td></td>" : "" ?>
         </tr>
@@ -53,12 +61,14 @@
                 $omschrijving = $cursus["omschrijving"];
                 $prijs = $cursus["prijs"];
                 $id = $cursus["id"];
+                $category = $cursus["category"];
 
                 echo "
                     <tr>
                         <td>" . $naam . "</td>
                         <td>" . $omschrijving . "</td>
                         <td>" . $prijs . "</td>
+                        <td>" . $category . "</td>
                 ";
 
                 if(isset($_SESSION["user"])) {
