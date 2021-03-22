@@ -34,8 +34,19 @@
         </header>
 
         <div class="main leaderboard-main">
+            <div class="leaderboard-main-header">
+                <span class="pink medium">T4I1AA C20</span>
+                <div class="leaderboard-main-header-right">
+                    <span class="little"><a href="#">Uitleg</a></span>
+                </div><br>
+                <span class="little grey">Team gestart op: <b>15-02-2021</b></span><br>
+                <span class="little pink">Wissel of Start een team</span>
+            </div>
+            <div class="leaderboard-main-main">
+            </div>
         </div>
 
+        <script src="src/js/progress.js?time=<?= time(); ?>"></script>
         <script src="src/js/leaderboard.js?time=<?= time(); ?>"></script>
     </body>
 </html>

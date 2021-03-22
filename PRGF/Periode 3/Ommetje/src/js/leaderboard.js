@@ -61,6 +61,41 @@ var leaderboard = [
 var ul = document.querySelector("ul");
 var lis = ul.querySelectorAll("li");
 
+var leaderboardMain = document.querySelector(".leaderboard-main-main");
+
 for(var i = 0; i < lis.length; i++) {
     lis[i].innerHTML = leaderboard[i]["name"];
 }   
+
+for(var i = 0; i < leaderboard.length; i++) {
+    var number = i + 1;
+
+    leaderboardMain.innerHTML += `
+        <div class="person">
+            <div class="center leaderboard-main-main-number">#` + number + `</div>
+            <div class="center leaderboard-main-main-name center">` + leaderboard[i]["name"] + `<br>` + leaderboard[i]["xp"] + ` XP</div>
+            <div class="center leaderboard-main-main-medals center">
+                <div class="earned-medals">
+                    <div class="earned-medal">
+                        <div class="earned-medal">
+                            <div class="earned-medal">
+                                <div class="earned-medal">
+                                    <div class="earned-medal">
+                                        <div class="earned-medal"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    var persons = leaderboardMain.querySelectorAll(".person");
+    var person = persons[persons.length - 1];
+    var earnedMedals = person.querySelectorAll(".earned-medal");
+    for(var j = 0; j < leaderboard[i]["medals"].length; j++) {
+        earnedMedals[j].style.backgroundImage = "url('" + medalInfo[medals[leaderboard[i]["medals"][j]]]["icon"] + "')";
+    }
+}

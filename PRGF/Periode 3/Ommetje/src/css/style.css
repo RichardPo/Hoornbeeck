@@ -443,3 +443,65 @@ li:nth-child(even) {
 li:nth-child(odd) {
     direction: rtl;
 }
+
+.leaderboard-main {
+    top: 0;
+    min-height: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.leaderboard-main-header {
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+
+.leaderboard-main-header-right {
+    float: right;
+}
+
+.grey {
+    color: grey;
+}
+
+.leaderboard-main-main-number {
+    height: 60px;
+    width: 60px;
+    float: left;
+}
+
+.leaderboard-main-main-name {
+    height: 60px;
+    width: fit-content;
+    max-width: 40%;
+    float: left;
+}
+
+.leaderboard-main-main-medals {
+    width: 40%;
+    float: right;
+    height: 60px;
+    position: relative;
+}
+
+.earned-medals {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+}
+
+.earned-medal {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    left: 15px;
+    background-image: transparent;
+    background-size: 100%100%;
+    border-radius: 100%;
+}
+
+.person {
+    width: 100%;
+    height: 60px;
+}
