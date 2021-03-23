@@ -82,6 +82,7 @@
     </table>
 
     <?= isset($_SESSION["user"]) && $_SESSION["user"]["admin"] == 1 ? "<br><a href='beheer.php'>Beheer cursussen</a>" : "" ?>
+    <?= isset($_SESSION["user"]) ? "<br><a href='inschrijvingen.php'>Uw inschrijvingen</a>" : "" ?>
     <?= empty($message) ? "" : "<br><div class='success'>" . $message . "</div>" ?>
 
     <div class="popup hidden" id="registerPopup">
