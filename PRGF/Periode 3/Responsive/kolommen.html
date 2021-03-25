@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            html, body {
+                height: 100vh;
+                padding: 0;
+                margin: 0;
+            }
+
+            .columns {
+                height: 100%;
+                width: 100%;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+
+            .column {
+                background-color: #303030;
+                height: 100%;
+                float: left;
+            }
+
+            .left {
+                width: 20%;
+                background-color: rgb(238, 84, 23);
+            }
+
+            .right {
+                width: 80%;
+            }
+
+            @media only screen and (max-width: 880px) {
+                .left, .right {
+                    width: 100%;
+                }
+
+                .column {
+                    height: 50%;
+                }
+            }
+
+            @media only screen and (max-width: 640px) {
+                .left {
+                    display: none;
+                }
+
+                .right {
+                    width: 100%;
+                }
+
+                .column {
+                    height: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="columns">
+            <div class="column left"></div>
+            <div class="column right"></div>
+        </div>
+    </body>
+</html>
